@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_id: 1
+  park: one
+  asset_class: MyString
+  asset_type: MyString
+  asset_size: MyString
+
+two:
+  asset_id: 1
+  park: two
+  asset_class: MyString
+  asset_type: MyString
+  asset_size: MyString
