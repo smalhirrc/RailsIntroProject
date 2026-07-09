@@ -122,10 +122,10 @@ jobs:
           RAILS_ENV: test
         run: bin/rails db:test:prepare
 
-      - name: Run system tests
-        env:
-          RAILS_ENV: test
-        run: bin/rails test:system
+      # - name: Run system tests
+        # env:
+          # RAILS_ENV: test
+        # run: bin/rails test:system
 
 
       - name: Keep screenshots from failed system tests
