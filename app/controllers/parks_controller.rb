@@ -12,10 +12,21 @@ class ParksController < ApplicationController
 
   def search
     @query = params[:query]
+    @district_id = params[:district_id]
 
-    @parks = Park.where(
-      "park_name LIKE :q OR park_category LIKE :q OR location_description LIKE :q",
-      q: "%#{@query}%"
-    )
+    @parks = Park.all
+
+    if @query.present?
+      @parks = Park.where(
+        "park_name LIKE :q OR park_category LIKE :q OR location_description LIKE :q",
+        q: "%#{@query}%"
+      )
+    end
+
+    if @district_id.present?
+      @parks = @parks.where(district_id: @district_id)
+    end
+
+    @districts = District.order(:district_name)
   end
 end
