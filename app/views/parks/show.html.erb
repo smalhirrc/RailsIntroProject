@@ -1,6 +1,7 @@
 <div id="menu">
     <ul>
         <li><a href="/index">Homepage</a></li>
+        <li><a href="/districts">Park By Districts</a></li>
         <li><a href="/about">About</a></li>
     </ul>
 </div>
@@ -26,5 +27,8 @@
 <% else %>
     <p>No assets available for this park.</p>
 <% end %>
-
+<p>
+  <strong>District:</strong>
+  <%= link_to @park.district.district_name, district_path(@park.district) %>
+</p>
 <main>

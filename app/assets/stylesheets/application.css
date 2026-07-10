@@ -40,22 +40,22 @@ main{
 }
 
 /*************************************** INDEX PAGE *****************************/
-#park_name_list{
+.park_name_list{
     margin-left: 20px;
     list-style: none;
 }
 
-#park_name_list li{
+.park_name_list li{
     margin-top: 10px;
     border: 1px solid;
     padding: 10px;
 }
 
-#park_name_list li:hover{
+.park_name_list li:hover{
     scale: 1.01;
 }
 
-#park_name_list li a{
+.park_name_list li a{
     text-decoration: none;
     display: block;
     height: 100%;

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "/index", to: "parks#index"
   get "/about", to: "parks#about"
   get "/show/:id", to: "parks#show"
+  get "/districts", to: "districts#districts"
+  get "/showdistrict/:id", to: "districts#showdistrict", as: :district
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

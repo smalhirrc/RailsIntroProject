@@ -6,10 +6,12 @@
     </ul>
 </div>
 <main>
-    <h1>Parks data in Winnipeg</h1>
+    <h1>Districts</h1>
     <ul class="park_name_list">
-        <% Park.all.each do |park| %>
-            <li><a href="/show/<%= park.park_id %>"><%= park.park_name %></a></li>
-        <% end %>
+    <% @districts.each do |district| %>
+        <li>
+        <%= link_to district.district_name, district_path(district) %>
+        </li>
+    <% end %>
     </ul>
 </main>

@@ -1,0 +1,17 @@
+<div id="menu">
+    <ul>
+        <li><a href="/index">Homepage</a></li>
+        <li><a href="/districts">Park By Districts</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+<h1><%= @district.district_name %></h1>
+<h2>Parks</h2>
+<ul class="park_name_list">
+  <% @district.parks.each do |park| %>
+    <li>
+      <%= link_to park.park_name, "/show/#{park.park_id}" %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to Districts", "/districts" %>

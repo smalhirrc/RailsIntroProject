@@ -37,7 +37,7 @@ assets.each do |asset|
     park = Park.find_by(park_id: asset['Park ID'])
     next unless park
 
-    Asset.create!(asset_id: asset['Asset ID'],
+    Asset.find_or_create_by!(asset_id: asset['Asset ID'],
         park: park,
         asset_class: asset['Asset Class'],
         asset_type: asset['Asset Type'],
