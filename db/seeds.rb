@@ -10,8 +10,8 @@
 require 'csv'
 
 Asset.destroy_all
-District.destroy_all
 Park.destroy_all
+District.destroy_all
 
 park_csv_file = Rails.root.join('db/ParksAndOpenSpaceData.csv')
 park_asset_csv_file = Rails.root.join('db/ParkAssetInventoryData.csv')
@@ -21,3 +21,26 @@ park_asset_data = File.read(park_asset_csv_file)
 
 parks = CSV.parse(park_data, headers: true)
 assets =  CSV.parse(park_asset_data, headers: true)
+
+parks.each do |park|
+    district = District.find_or_create_by!(district_name: park['District'])
+
+    Park.create!(park_id: park['Park ID'], 
+        park_name: park['Park Name'], 
+        location_description: park['Location Description'], 
+        park_category: park['Park Category'], 
+        district: district
+    )
+end
+
+assets.each do |asset|
+    park = Park.find_by(park_id: asset['Park ID'])
+    next unless park
+
+    Asset.create!(asset_id: asset['Asset ID'],
+        park: park,
+        asset_class: asset['Asset Class'],
+        asset_type: asset['Asset Type'],
+        asset_size: asset['Asset Size']
+    )
+end
