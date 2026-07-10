@@ -25,10 +25,10 @@ assets =  CSV.parse(park_asset_data, headers: true)
 parks.each do |park|
     district = District.find_or_create_by!(district_name: park['District'])
 
-    Park.create!(park_id: park['Park ID'], 
-        park_name: park['Park Name'], 
-        location_description: park['Location Description'], 
-        park_category: park['Park Category'], 
+    Park.create!(park_id: park['Park ID'],
+        park_name: park['Park Name'],
+        location_description: park['Location Description'],
+        park_category: park['Park Category'],
         district: district
     )
 end
