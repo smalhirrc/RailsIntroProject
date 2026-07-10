@@ -1,0 +1,65 @@
+<div id="menu">
+    <ul>
+        <li><a href="/index">Homepage</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+<div class="about-container">
+  <h1>About This Application</h1>
+
+  <p class="intro">
+    This application uses two datasets from the City of Winnipeg Open Data Portal to provide
+    information about parks, districts, and park assets. The data is imported into a Rails
+    database and displayed through this web application.
+  </p>
+
+  <div class="source-card">
+    <h2>Parks and Open Space Data</h2>
+
+    <p>
+      This dataset contains information about parks and open spaces in Winnipeg. It provides
+      details used to create park records and associate them with city districts.
+    </p>
+
+    <h3>Attributes</h3>
+    <ul>
+      <li>Park ID</li>
+      <li>Park Name</li>
+      <li>Location Description</li>
+      <li>Park Category</li>
+      <li>District</li>
+    </ul>
+
+    <p>
+      <strong>Source:</strong><br>
+      <a href="https://data.winnipeg.ca/api/v3/views/dk7c-zxyd/query.json" target="_blank">
+        Parks and Open Space Data
+      </a>
+    </p>
+  </div>
+
+  <div class="source-card">
+    <h2>Park Asset Inventory Data</h2>
+
+    <p>
+      This dataset contains information about amenities and facilities located within Winnipeg
+      parks. Each asset is linked to a park using the Park ID.
+    </p>
+
+    <h3>Attributes</h3>
+    <ul>
+      <li>Asset ID</li>
+      <li>Park ID</li>
+      <li>Asset Class</li>
+      <li>Asset Type</li>
+      <li>Asset Size</li>
+    </ul>
+
+    <p>
+      <strong>Source:</strong><br>
+      <a href="https://data.winnipeg.ca/api/v3/views/tx3d-pfxq/query.json" target="_blank">
+        Park Asset Inventory Data
+      </a>
+    </p>
+  </div>
+</div>

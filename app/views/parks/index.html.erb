@@ -1,0 +1,14 @@
+<div id="menu">
+    <ul>
+        <li><a href="/index">Homepage</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+<main>
+    <h1>Parks data in Winnipeg</h1>
+    <ul id="park_name_list">
+        <% Park.all.each do |park| %>
+            <li><a href=""><%= park.park_name %></a></li>
+        <% end %>
+    </ul>
+</main>
