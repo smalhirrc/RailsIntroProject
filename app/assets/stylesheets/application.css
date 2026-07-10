@@ -128,3 +128,8 @@ main{
 .source-card a:hover {
   text-decoration: underline;
 }
+
+/**************************************** SHOW DISTRICT ****************************************/
+#backtodistrictlink{
+  padding: 20px;
+}

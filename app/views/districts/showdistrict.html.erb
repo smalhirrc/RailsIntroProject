@@ -18,6 +18,10 @@
 <%= form.submit "Search" %>
 <% end %>
 
+<div id="backtodistrictlink">
+  <%= link_to "Back to Districts", "/districts" %>
+</div>
+
 <h1><%= @district.district_name %></h1>
 <h2>Parks</h2>
 <ul class="park_name_list">
@@ -27,4 +31,6 @@
     </li>
   <% end %>
 </ul>
-<%= link_to "Back to Districts", "/districts" %>
+<div id="backtodistrictlink">
+  <%= link_to "Back to Districts", "/districts" %>
+</div>
