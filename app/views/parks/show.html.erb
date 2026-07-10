@@ -1,0 +1,30 @@
+<div id="menu">
+    <ul>
+        <li><a href="/index">Homepage</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+<main>
+<div class="park_info_card">
+    <h1><%= @park.park_name %></h1>
+    <p>Asset: <%= @asset %><p>
+    <p><strong>Park ID:</strong> <%= @park.park_id %></p>
+    <p><strong>Location:</strong> <%= @park.location_description %></p>
+    <p><strong>Category:</strong> <%= @park.park_category %></p>
+    <p><strong>District:</strong> <%= @park.district.district_name %></p>
+<div>
+
+<% if @park.assets.any? %>
+    <h2>Park Assets</h2>
+    <% @park.assets.each do |asset| %>
+        <div class="park_info_card">
+            <p><strong>Asset Class:</strong><%= asset.asset_class %><p>
+            <p><strong>Asset Type:</strong><%= asset.asset_type %><p>
+            <p><strong>Asset Size:</strong><%= asset.asset_size %><p>
+        </div>
+    <% end %>
+<% else %>
+    <p>No assets available for this park.</p>
+<% end %>
+
+<main>

@@ -57,6 +57,22 @@ main{
 
 #park_name_list li a{
     text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/*************************************** SHOW PAGE **************************************/
+.park_info_card {
+  background: #f8f9fa;
+  border: 1px solid #bababa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.park_info_card p {
+  margin: 10px 0;
 }
 
 /*************************************** ABOUT PAGE *****************************/
