@@ -5,6 +5,11 @@
         <li><a href="/about">About</a></li>
     </ul>
 </div>
+
+<%= form_with url: "/search", method: :get do |form| %>
+    <%= form.text_field :query, placeholder: "Search parks..." %>
+<%= form.submit "Search" %>
+<% end %>
 <main>
 <div class="park_info_card">
     <h1><%= @park.park_name %></h1>

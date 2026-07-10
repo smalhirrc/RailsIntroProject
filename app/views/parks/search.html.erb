@@ -11,11 +11,16 @@
 <%= form.submit "Search" %>
 <% end %>
 
-<main>
-    <h1>Parks data in Winnipeg</h1>
-    <ul class="park_name_list">
-        <% Park.all.each do |park| %>
-            <li><a href="/show/<%= park.park_id %>"><%= park.park_name %></a></li>
-        <% end %>
-    </ul>
-</main>
+<h1>Search Results</h1>
+
+<% if @parks.any? %>
+  <ul class="park_name_list">
+    <% @parks.each do |park| %>
+      <li>
+        <%= link_to park.park_name, "/show/#{park.park_id}" %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No parks found.</p>
+<% end %>
